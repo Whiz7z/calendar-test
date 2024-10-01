@@ -1,0 +1,74 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.container {
+  display: flex;
+  padding: 0 20px;
+  height: 70px;
+  width: 100%;
+  justify-content: space-between;
+  background-color: $white;
+  box-shadow: 0px 2px  6px rgba(0, 0, 0, 0.039);
+  .searchBar {
+    width: 314px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .profileBar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
+.searchInput {
+  @include textStyle(13px, 400, $text, 2rem);
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+.actions {
+  display: flex;
+  gap: 30px;
+  height: 28px;
+  align-self: center;
+  border-right: solid 1px $border;
+  align-items: center;
+  padding-right: 17px;
+  .action {
+    cursor: pointer;
+  }
+}
+
+.user {
+  display: flex;
+  gap: 11px;
+  align-items: center;
+  .dropdown {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+
+    cursor: pointer;
+
+    span {
+      display: flex;
+      align-items: center;
+    }
+    p {
+      @include textStyle(13px, 400, $text, 2rem);
+    }
+  }
+
+  .avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+  }
+}

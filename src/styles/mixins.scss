@@ -1,0 +1,23 @@
+@import "variables";
+
+@mixin textStyle($size, $weight, $color, $lineHeight) {
+  font-family: SourceSansPro;
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+  
+  line-height: $lineHeight;
+}
+
+
+@mixin button($width, $height, $color: $white-text, $bg: $btn-bg, $radius: 5px) {
+  width: $width;
+  height: $height;
+  display: grid;
+  place-content: center;
+  color:$color;
+  background-color: $bg;
+  border: none;
+  border-radius: $radius;
+  cursor: pointer;
+}

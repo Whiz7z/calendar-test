@@ -1,0 +1,173 @@
+ @import "./styles/variables.scss";
+ @import "./styles/mixins.scss";
+@font-face {
+  font-family: SourceSansPro;
+  src: url("/src/assets/fonts/SourceSansPro-Regular.woff") format("woff");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: SourceSansPro;
+  src: url("/src/assets/fonts/SourceSansPro-SemiBold.woff") format("woff");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: SourceSansPro;
+  src: url("/src/assets/fonts/SourceSansPro-Bold.woff") format("woff");
+  font-weight: 700;
+}
+
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  /* outline: 1px solid red; */
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+/* //ae7e45 */
+html {
+  font-size: 62.5%;
+
+  font-weight: 400;
+  font-size: 24px;
+  font-style: normal;
+  background-color: #F0F0F7;
+  font-family: SourceSansPro;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* * {
+  outline: 1px solid red;
+} */
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100lvh;
+  scroll-behavior: smooth;
+  // background-color: $light;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+ul,
+p,
+article {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  color: auto;
+  text-decoration: none;
+}
+
+#root {
+  width: 100vw;
+  display: grid;
+  height: 100vh;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+
+.content-container {
+
+
+  .content{
+    padding: 32px 95px 103px 75px;
+  }
+}
+
+.title {
+  @include textStyle(28px, 400, $title, 4rem);
+  
+}
+// ::-webkit-scrollbar {
+//   width: 11px;
+// }
+
+// /* Track */
+// ::-webkit-scrollbar-track {
+//   background: $dark;
+// }
+
+// /* Handle */
+// ::-webkit-scrollbar-thumb {
+//   background: $light;
+// }
+
+// /* Handle on hover */
+// ::-webkit-scrollbar-thumb:hover {
+//   background: #555;
+// }
