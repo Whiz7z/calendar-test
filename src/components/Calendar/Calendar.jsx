@@ -140,6 +140,14 @@ const Calendar = () => {
     setIsModalOpen(false);
   };
 
+  const handleEventDelete = () => {
+    const updatedEvents = events.filter(
+      (event) => event.id !== selectedEventId
+    );
+    setEvents(updatedEvents);
+    setIsModalOpen(false);
+  };
+
   return (
     <div style={{ padding: "20px" }} className="calendar-container">
       <h3>Calendar View</h3>
@@ -251,12 +259,24 @@ const Calendar = () => {
               }
             />
             <div className="modal-actions">
-              <button
-                onClick={() => setIsModalOpen(false)}
-                className="modal-cancel"
-              >
-                Cancel
-              </button>
+              {!isEditMode && (
+                <button
+                  onClick={() => setIsModalOpen(false)}
+                  className="modal-cancel"
+                >
+                  Cancel
+                </button>
+              )}
+
+              {isEditMode && (
+                <button
+                  onClick={handleEventDelete}
+                  className="modal-cancel"
+                  style={{ color: "red" }}
+                >
+                  Delete
+                </button>
+              )}
               <button onClick={handleEventSubmit} className="modal-save">
                 {isEditMode ? "Save Changes" : "Save"}
               </button>
